@@ -1,10 +1,10 @@
-
 attractions = [
     {
         "id": 1,
         "name": "Lekki Conservation Centre",
         "description": "A beautiful nature reserve in Lagos.",
         "location": "Lekki, Lagos",
+        "city": "Lagos",  # Add the city field
         "image_url": "https://example.com/lekki.jpg",
         "rating": 4.5,
         "reviews": [
@@ -17,6 +17,7 @@ attractions = [
         "name": "Nike Art Gallery",
         "description": "One of the largest art galleries in Nigeria.",
         "location": "Lekki, Lagos",
+        "city": "Lagos",  # Add the city field
         "image_url": "https://example.com/nike.jpg",
         "rating": 4.8,
         "reviews": [
