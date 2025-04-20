@@ -1,5 +1,4 @@
-
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from data.dummy_data import attractions
 from flask_cors import CORS
 
@@ -12,7 +11,13 @@ def index():
 
 @app.route('/api/attractions', methods=['GET'])
 def get_attractions():
-    return jsonify(attractions)
+    city = request.args.get('city')  # Get the city name from the query parameter
+    if city:
+        # Filter attractions by the city name
+        filtered_attractions = [a for a in attractions if a['city'].lower() == city.lower()]
+        return jsonify(filtered_attractions)
+    else:
+        return jsonify({"error": "City is required"}), 400
 
 @app.route('/api/attractions/<int:attraction_id>', methods=['GET'])
 def get_attraction(attraction_id):
